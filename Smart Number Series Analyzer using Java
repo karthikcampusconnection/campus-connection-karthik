@@ -1,0 +1,27 @@
+import java.util.*;
+public class SmartSeriesAnalyzer {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter numbers separated by space:");
+        String input = sc.nextLine();
+        String[] arr = input.split(" ");
+        int[] nums = new int[arr.length];
+        for(int i = 0; i < arr.length; i++) {
+            nums[i] = Integer.parseInt(arr[i]);
+        }
+        boolean isArithmetic = true;
+        int diff = nums[1] - nums[0];
+
+        for(int i = 1; i < nums.length - 1; i++) {
+            if(nums[i+1] - nums[i] != diff) {
+                isArithmetic = false;
+                break;
+            }
+        }
+        if(isArithmetic) {
+            System.out.println("Arithmetic Series with difference: " + diff);
+        } else {
+            System.out.println("Not an Arithmetic Series");
+        }
+    }
+}
