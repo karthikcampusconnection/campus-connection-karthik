@@ -1,0 +1,17 @@
+import java.util.*;
+public class CustomSequenceBuilder {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<Integer> sequence = new ArrayList<>();
+        System.out.println("Enter numbers (type -1 to stop):");
+        while(true) {
+            int num = sc.nextInt();
+            if(num == -1) break;
+            sequence.add(num);
+        }
+        System.out.println("Your Sequence:");
+        for(int n : sequence) {
+            System.out.print(n + " ");
+        }
+    }
+}
